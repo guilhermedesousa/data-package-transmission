@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity gerador is
+	port (
+		clk		: in std_logic;
+		resetn	: in std_logic;
+		seq		: out std_logic
+	);
+end entity gerador;
+
+architecture behavior of gerador is
+	constant data_pack	: std_logic_vector(0 to 9) := "0001001101";
+	signal header_in		: std_logic_vector(0 to 1);
+	signal header_out		: std_logic_vector(0 to 4);
+	signal data				: std_logic_vector(0 to 7);
+	signal seq_out			: std_logic_vector(0 to 12);
+
+begin
+	header_in <= data_pack(0 to 1);
+	data <= data_pack(2 to 9);
+	
+	with header_in select
+		header_out <= "11001" when "00",
+						  "01011" when "01",
+						  "01110" when "10",
+						  "00000" when others;
+	
+	seq_out <= header_out & data;
+	
+	process (clk, resetn)
+		variable count: std_logic_vector(3 downto 0) := "0000";
+	begin
+		if (resetn = '0') then
+			seq <= 'X';
+		elsif (clk'event and clk = '1') then
+			seq <= seq_out(to_integer(unsigned(count)));
+			count := count + "0001";
+		end if;
+	end process;
+end behavior;

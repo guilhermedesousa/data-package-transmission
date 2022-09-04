@@ -1,0 +1,1120 @@
+TimeQuest Timing Analyzer report for data_package_transmission
+Sat Aug 20 18:26:05 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; data_package_transmission                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 149.03 MHz ; 149.03 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.102 ; -73.740       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -59.065               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                           ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.102 ; gerador:gen_cod|header_in[0]    ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.139      ;
+; -3.030 ; gerador:gen_cod|header_in[1]    ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 4.067      ;
+; -2.882 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 3.919      ;
+; -2.855 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.393      ;
+; -2.844 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.382      ;
+; -2.807 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.345      ;
+; -2.803 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.841      ;
+; -2.802 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.840      ;
+; -2.800 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.838      ;
+; -2.800 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.838      ;
+; -2.771 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.809      ;
+; -2.770 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.808      ;
+; -2.768 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.806      ;
+; -2.768 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.806      ;
+; -2.729 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.267      ;
+; -2.718 ; gerador:gen_cod|count_bit_tr[2] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 3.755      ;
+; -2.650 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.688      ;
+; -2.649 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.687      ;
+; -2.647 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.685      ;
+; -2.647 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.685      ;
+; -2.633 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.171      ;
+; -2.613 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.151      ;
+; -2.609 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.147      ;
+; -2.606 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.144      ;
+; -2.603 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.141      ;
+; -2.602 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.140      ;
+; -2.599 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.137      ;
+; -2.598 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.136      ;
+; -2.598 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.136      ;
+; -2.595 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.133      ;
+; -2.592 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.130      ;
+; -2.587 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.125      ;
+; -2.568 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.106      ;
+; -2.567 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.105      ;
+; -2.564 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.102      ;
+; -2.562 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.100      ;
+; -2.560 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.098      ;
+; -2.560 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.098      ;
+; -2.551 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.089      ;
+; -2.540 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.078      ;
+; -2.539 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.077      ;
+; -2.533 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.071      ;
+; -2.533 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 3.071      ;
+; -2.516 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.554      ;
+; -2.515 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.553      ;
+; -2.513 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.551      ;
+; -2.513 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 3.551      ;
+; -2.454 ; detector:det_dec|count_bit[3]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.492      ;
+; -2.448 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.986      ;
+; -2.428 ; detector:det_dec|count_bit[0]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.466      ;
+; -2.405 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.943      ;
+; -2.393 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.931      ;
+; -2.390 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.928      ;
+; -2.386 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.924      ;
+; -2.362 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.900      ;
+; -2.314 ; detector:det_dec|y.F_0          ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 3.352      ;
+; -2.305 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.343      ;
+; -2.303 ; detector:det_dec|count_bit[0]   ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 3.341      ;
+; -2.302 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.342      ;
+; -2.301 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.341      ;
+; -2.300 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.340      ;
+; -2.298 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.836      ;
+; -2.297 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.335      ;
+; -2.297 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.835      ;
+; -2.296 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.336      ;
+; -2.296 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.334      ;
+; -2.294 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.332      ;
+; -2.293 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.831      ;
+; -2.292 ; gerador:gen_cod|count_bit_tr[3] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 3.329      ;
+; -2.292 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.830      ;
+; -2.291 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.829      ;
+; -2.290 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.828      ;
+; -2.290 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.828      ;
+; -2.289 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.827      ;
+; -2.286 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.824      ;
+; -2.285 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.823      ;
+; -2.283 ; detector:det_dec|count_bit[2]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.321      ;
+; -2.270 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.310      ;
+; -2.269 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.309      ;
+; -2.268 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.308      ;
+; -2.264 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.304      ;
+; -2.257 ; detector:det_dec|y.F_1          ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 3.295      ;
+; -2.255 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; -0.002     ; 3.291      ;
+; -2.254 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; -0.002     ; 3.290      ;
+; -2.252 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; -0.002     ; 3.288      ;
+; -2.252 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; -0.002     ; 3.288      ;
+; -2.209 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.747      ;
+; -2.205 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.743      ;
+; -2.203 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.741      ;
+; -2.201 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.739      ;
+; -2.201 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.739      ;
+; -2.149 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.189      ;
+; -2.148 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.188      ;
+; -2.147 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 1.000        ; 0.002      ; 3.187      ;
+; -2.143 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.183      ;
+; -2.141 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.679      ;
+; -2.135 ; detector:det_dec|count_bit[1]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.173      ;
+; -2.127 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.665      ;
+; -2.122 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.660      ;
+; -2.121 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 2.659      ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                            ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; gerador:gen_cod|count_package[1] ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|y.C_0           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[2]      ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[7]      ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[6]      ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[3]      ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[4]      ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[5]      ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; detector:det_dec|seq_cod[0]      ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.623 ; detector:det_dec|y.D_1           ; detector:det_dec|y.E_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.909      ;
+; 0.624 ; detector:det_dec|y.B_1           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.633 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|header_in[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.633 ; detector:det_dec|y.C_0           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.766 ; detector:det_dec|y.D_2           ; detector:det_dec|y.E_2           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.052      ;
+; 0.783 ; detector:det_dec|y.C_1           ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.069      ;
+; 0.784 ; detector:det_dec|y.C_1           ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.787 ; detector:det_dec|y.C_1           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.799 ; gerador:gen_cod|count_package[1] ; gerador:gen_cod|header_in[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.085      ;
+; 0.811 ; detector:det_dec|y.E_1           ; detector:det_dec|y.F_1           ; clk          ; clk         ; 0.000        ; -0.001     ; 1.096      ;
+; 0.880 ; detector:det_dec|y.A_0           ; detector:det_dec|y.B_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 0.937 ; gerador:gen_cod|seq              ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.224      ;
+; 0.941 ; gerador:gen_cod|seq              ; detector:det_dec|y.B_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.228      ;
+; 0.944 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.231      ;
+; 0.944 ; gerador:gen_cod|seq              ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.231      ;
+; 0.979 ; detector:det_dec|y.E_2           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.265      ;
+; 0.984 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 0.990 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.276      ;
+; 1.012 ; detector:det_dec|y.B_0           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.020 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.055 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.137 ; detector:det_dec|y.D_0           ; detector:det_dec|y.E_0           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.425      ;
+; 1.146 ; detector:det_dec|y.C_0           ; detector:det_dec|y.D_0           ; clk          ; clk         ; 0.000        ; -0.002     ; 1.430      ;
+; 1.153 ; detector:det_dec|y.F_1           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.440      ;
+; 1.195 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.481      ;
+; 1.231 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.518      ;
+; 1.233 ; detector:det_dec|y.F_2           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.520      ;
+; 1.258 ; detector:det_dec|count_bit[2]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.544      ;
+; 1.270 ; gerador:gen_cod|seq              ; detector:det_dec|y.F_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.556      ;
+; 1.300 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.587      ;
+; 1.350 ; detector:det_dec|seq_cod[0]      ; detector:det_dec|seqdec[0]       ; clk          ; clk         ; -0.500       ; 0.000      ; 1.136      ;
+; 1.356 ; detector:det_dec|seq_cod[6]      ; detector:det_dec|seqdec[6]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.141      ;
+; 1.364 ; detector:det_dec|seq_cod[2]      ; detector:det_dec|seqdec[7]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.149      ;
+; 1.364 ; detector:det_dec|seq_cod[2]      ; detector:det_dec|seqdec[2]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.149      ;
+; 1.378 ; detector:det_dec|seq_cod[4]      ; detector:det_dec|seqdec[4]       ; clk          ; clk         ; -0.500       ; 0.000      ; 1.164      ;
+; 1.379 ; detector:det_dec|seq_cod[4]      ; detector:det_dec|seqdec[5]       ; clk          ; clk         ; -0.500       ; 0.000      ; 1.165      ;
+; 1.413 ; detector:det_dec|y.D_0           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.701      ;
+; 1.427 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.713      ;
+; 1.431 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.717      ;
+; 1.431 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.717      ;
+; 1.432 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.718      ;
+; 1.433 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.719      ;
+; 1.449 ; detector:det_dec|count_bit[3]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.465 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.751      ;
+; 1.478 ; detector:det_dec|y.D_0           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.002      ; 1.766      ;
+; 1.478 ; detector:det_dec|seq_cod[5]      ; detector:det_dec|seqdec[5]       ; clk          ; clk         ; -0.500       ; 0.000      ; 1.264      ;
+; 1.480 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.766      ;
+; 1.484 ; detector:det_dec|y.E_2           ; detector:det_dec|y.F_2           ; clk          ; clk         ; 0.000        ; -0.001     ; 1.769      ;
+; 1.493 ; detector:det_dec|y.E_0           ; detector:det_dec|y.F_0           ; clk          ; clk         ; 0.000        ; -0.001     ; 1.778      ;
+; 1.494 ; detector:det_dec|y.E_2           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.780      ;
+; 1.497 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.783      ;
+; 1.503 ; detector:det_dec|seq_cod[7]      ; detector:det_dec|seqdec[7]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.288      ;
+; 1.508 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.794      ;
+; 1.516 ; detector:det_dec|seq_cod[3]      ; detector:det_dec|seqdec[3]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.301      ;
+; 1.519 ; detector:det_dec|seq_cod[3]      ; detector:det_dec|seqdec[6]       ; clk          ; clk         ; -0.500       ; -0.001     ; 1.304      ;
+; 1.527 ; detector:det_dec|y.F_0           ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.814      ;
+; 1.532 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.818      ;
+; 1.536 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.822      ;
+; 1.537 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.823      ;
+; 1.538 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.824      ;
+; 1.543 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.829      ;
+; 1.551 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.563 ; detector:det_dec|y.F_0           ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 1.850      ;
+; 1.624 ; gerador:gen_cod|count_bit[3]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.910      ;
+; 1.632 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.639 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.925      ;
+; 1.645 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.933      ;
+; 1.647 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.933      ;
+; 1.742 ; detector:det_dec|count_bit[2]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.028      ;
+; 1.779 ; gerador:gen_cod|count_bit[3]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.067      ;
+; 1.806 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.092      ;
+; 1.820 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.106      ;
+; 1.900 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.188      ;
+; 1.931 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; -0.002     ; 2.215      ;
+; 1.931 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; -0.002     ; 2.215      ;
+; 1.932 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 2.220      ;
+; 1.933 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 0.000        ; -0.002     ; 2.217      ;
+; 1.934 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; -0.002     ; 2.218      ;
+; 1.954 ; detector:det_dec|count_bit[3]    ; detector:det_dec|valid_out       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.240      ;
+; 1.994 ; detector:det_dec|y.F_1           ; detector:det_dec|y.D_0           ; clk          ; clk         ; 0.000        ; -0.001     ; 2.279      ;
+; 1.999 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.285      ;
+; 2.005 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.291      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[5]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[5]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[6]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[6]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[7]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[7]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[3]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[3]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[4]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[4]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[5]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[5]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[6]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[6]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[7]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[7]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|valid_out       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|valid_out       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.A_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.A_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.B_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.B_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.B_1           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.B_1           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.C_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.C_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.C_1           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.C_1           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_1           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_1           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_2           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_2           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_1           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_1           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_2           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_2           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_0           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_0           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_1           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_1           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_2           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_2           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_package[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_package[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_package[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_package[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|header_in[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|header_in[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|header_in[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|header_in[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|seq              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|seq              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; resetn    ; clk        ; 1.299 ; 1.299 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; resetn    ; clk        ; -0.444 ; -0.444 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 7.206 ; 7.206 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 6.901 ; 6.901 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 6.554 ; 6.554 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 6.896 ; 6.896 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 6.880 ; 6.880 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 6.895 ; 6.895 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 6.871 ; 6.871 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 6.884 ; 6.884 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 7.206 ; 7.206 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 6.909 ; 6.909 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 6.554 ; 6.554 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 6.901 ; 6.901 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 6.554 ; 6.554 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 6.896 ; 6.896 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 6.880 ; 6.880 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 6.895 ; 6.895 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 6.871 ; 6.871 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 6.884 ; 6.884 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 7.206 ; 7.206 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 6.909 ; 6.909 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.749 ; -9.789        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -48.380               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                           ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.749 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.281      ;
+; -0.745 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.277      ;
+; -0.743 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.275      ;
+; -0.708 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.240      ;
+; -0.682 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.214      ;
+; -0.678 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.210      ;
+; -0.670 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.202      ;
+; -0.668 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.200      ;
+; -0.667 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.199      ;
+; -0.666 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.198      ;
+; -0.665 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.197      ;
+; -0.664 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.196      ;
+; -0.664 ; detector:det_dec|y.F_1          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.196      ;
+; -0.662 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.194      ;
+; -0.659 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.191      ;
+; -0.658 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.190      ;
+; -0.650 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.182      ;
+; -0.648 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.180      ;
+; -0.648 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.180      ;
+; -0.647 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.179      ;
+; -0.644 ; detector:det_dec|count_bit[0]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.176      ;
+; -0.644 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.176      ;
+; -0.642 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.174      ;
+; -0.642 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.174      ;
+; -0.641 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.173      ;
+; -0.638 ; detector:det_dec|y.F_0          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.170      ;
+; -0.621 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.153      ;
+; -0.617 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.149      ;
+; -0.605 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.137      ;
+; -0.604 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.136      ;
+; -0.601 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.133      ;
+; -0.600 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.132      ;
+; -0.589 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.121      ;
+; -0.572 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.104      ;
+; -0.568 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.100      ;
+; -0.566 ; detector:det_dec|count_bit[1]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.098      ;
+; -0.556 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.088      ;
+; -0.547 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.079      ;
+; -0.546 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.078      ;
+; -0.543 ; gerador:gen_cod|header_in[0]    ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.574      ;
+; -0.543 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.075      ;
+; -0.543 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.075      ;
+; -0.542 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.074      ;
+; -0.541 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.073      ;
+; -0.540 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.072      ;
+; -0.540 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.072      ;
+; -0.540 ; detector:det_dec|y.F_2          ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.072      ;
+; -0.539 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.071      ;
+; -0.536 ; detector:det_dec|count_bit[3]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.068      ;
+; -0.530 ; gerador:gen_cod|header_in[1]    ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.561      ;
+; -0.511 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.043      ;
+; -0.507 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.039      ;
+; -0.505 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.037      ;
+; -0.489 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.021      ;
+; -0.479 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.011      ;
+; -0.478 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.509      ;
+; -0.478 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.010      ;
+; -0.475 ; detector:det_dec|count_bit[2]   ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.007      ;
+; -0.474 ; gerador:gen_cod|seq             ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.500        ; 0.000      ; 1.006      ;
+; -0.441 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.473      ;
+; -0.440 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.472      ;
+; -0.438 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.470      ;
+; -0.438 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.470      ;
+; -0.426 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.458      ;
+; -0.425 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.457      ;
+; -0.423 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.455      ;
+; -0.423 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.455      ;
+; -0.416 ; gerador:gen_cod|count_bit_tr[2] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.447      ;
+; -0.373 ; detector:det_dec|count_bit[3]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.405      ;
+; -0.369 ; detector:det_dec|count_bit[0]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.401      ;
+; -0.361 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.393      ;
+; -0.360 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.392      ;
+; -0.358 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.390      ;
+; -0.358 ; gerador:gen_cod|count_bit[3]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.390      ;
+; -0.314 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.346      ;
+; -0.313 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.345      ;
+; -0.312 ; detector:det_dec|count_bit[2]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.344      ;
+; -0.311 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.343      ;
+; -0.311 ; gerador:gen_cod|count_bit[0]    ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.343      ;
+; -0.280 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.312      ;
+; -0.280 ; detector:det_dec|count_bit[1]   ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.312      ;
+; -0.272 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.304      ;
+; -0.271 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.303      ;
+; -0.269 ; detector:det_dec|y.F_1          ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.301      ;
+; -0.264 ; gerador:gen_cod|count_bit_tr[3] ; gerador:gen_cod|seq              ; clk          ; clk         ; 1.000        ; -0.001     ; 1.295      ;
+; -0.258 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.292      ;
+; -0.258 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.292      ;
+; -0.258 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.292      ;
+; -0.253 ; gerador:gen_cod|count_bit[1]    ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.287      ;
+; -0.243 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.277      ;
+; -0.243 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 1.000        ; 0.002      ; 1.277      ;
+; -0.243 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.277      ;
+; -0.241 ; detector:det_dec|y.F_1          ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.273      ;
+; -0.238 ; gerador:gen_cod|count_bit[2]    ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.272      ;
+; -0.233 ; detector:det_dec|count_bit[0]   ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.265      ;
+; -0.230 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 1.000        ; -0.002     ; 1.260      ;
+; -0.229 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 1.000        ; -0.002     ; 1.259      ;
+; -0.227 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 1.000        ; -0.002     ; 1.257      ;
+; -0.227 ; gerador:gen_cod|count_bit_tr[1] ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 1.000        ; -0.002     ; 1.257      ;
+; -0.227 ; detector:det_dec|y.F_0          ; detector:det_dec|valid_out       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.259      ;
++--------+---------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                            ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; gerador:gen_cod|count_package[1] ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|y.C_0           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[2]      ; detector:det_dec|seq_cod[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[7]      ; detector:det_dec|seq_cod[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[6]      ; detector:det_dec|seq_cod[6]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[3]      ; detector:det_dec|seq_cod[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[4]      ; detector:det_dec|seq_cod[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[5]      ; detector:det_dec|seq_cod[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; detector:det_dec|seq_cod[0]      ; detector:det_dec|seq_cod[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; detector:det_dec|y.B_1           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; detector:det_dec|y.D_1           ; detector:det_dec|y.E_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.246 ; detector:det_dec|y.C_0           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.248 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|header_in[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.400      ;
+; 0.301 ; detector:det_dec|y.C_1           ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.453      ;
+; 0.302 ; detector:det_dec|y.C_1           ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.454      ;
+; 0.304 ; detector:det_dec|y.C_1           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.456      ;
+; 0.315 ; detector:det_dec|y.D_2           ; detector:det_dec|y.E_2           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.467      ;
+; 0.321 ; detector:det_dec|y.E_1           ; detector:det_dec|y.F_1           ; clk          ; clk         ; 0.000        ; -0.001     ; 0.472      ;
+; 0.346 ; gerador:gen_cod|count_package[1] ; gerador:gen_cod|header_in[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.498      ;
+; 0.362 ; detector:det_dec|y.A_0           ; detector:det_dec|y.B_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.364 ; detector:det_dec|y.E_2           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.368 ; gerador:gen_cod|count_package[0] ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; detector:det_dec|y.B_0           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; gerador:gen_cod|seq              ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.524      ;
+; 0.373 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; gerador:gen_cod|seq              ; detector:det_dec|y.B_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.526      ;
+; 0.375 ; gerador:gen_cod|seq              ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.528      ;
+; 0.375 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.528      ;
+; 0.394 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.546      ;
+; 0.399 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.551      ;
+; 0.427 ; detector:det_dec|y.D_0           ; detector:det_dec|y.E_0           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.581      ;
+; 0.432 ; detector:det_dec|y.F_1           ; detector:det_dec|y.C_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.585      ;
+; 0.433 ; detector:det_dec|y.C_0           ; detector:det_dec|y.D_0           ; clk          ; clk         ; 0.000        ; -0.002     ; 0.583      ;
+; 0.452 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.604      ;
+; 0.473 ; detector:det_dec|y.F_2           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.626      ;
+; 0.486 ; detector:det_dec|count_bit[2]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.493 ; gerador:gen_cod|seq              ; detector:det_dec|y.F_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.645      ;
+; 0.499 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_0           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.652      ;
+; 0.510 ; gerador:gen_cod|seq              ; detector:det_dec|y.E_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.663      ;
+; 0.528 ; detector:det_dec|count_bit[3]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.539 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.691      ;
+; 0.544 ; detector:det_dec|y.D_0           ; detector:det_dec|y.C_1           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.698      ;
+; 0.547 ; detector:det_dec|y.D_0           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.002      ; 0.701      ;
+; 0.547 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.552 ; detector:det_dec|y.E_2           ; detector:det_dec|y.B_1           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.560 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.712      ;
+; 0.565 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.568 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.569 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.570 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.576 ; detector:det_dec|y.F_0           ; detector:det_dec|y.D_2           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.729      ;
+; 0.581 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.582 ; detector:det_dec|y.E_2           ; detector:det_dec|y.F_2           ; clk          ; clk         ; 0.000        ; -0.001     ; 0.733      ;
+; 0.586 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.586 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.586 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.587 ; detector:det_dec|y.F_0           ; detector:det_dec|y.D_1           ; clk          ; clk         ; 0.000        ; 0.001      ; 0.740      ;
+; 0.590 ; detector:det_dec|y.E_0           ; detector:det_dec|y.F_0           ; clk          ; clk         ; 0.000        ; -0.001     ; 0.741      ;
+; 0.593 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.609 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.614 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.768      ;
+; 0.618 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[2]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
+; 0.618 ; gerador:gen_cod|count_bit[3]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
+; 0.619 ; detector:det_dec|count_bit[0]    ; detector:det_dec|count_bit[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
+; 0.630 ; detector:det_dec|count_bit[2]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.782      ;
+; 0.661 ; gerador:gen_cod|count_bit[3]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.815      ;
+; 0.664 ; detector:det_dec|count_bit[1]    ; detector:det_dec|count_bit[3]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.816      ;
+; 0.685 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.837      ;
+; 0.726 ; gerador:gen_cod|count_bit[2]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.880      ;
+; 0.737 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.889      ;
+; 0.741 ; gerador:gen_cod|count_bit[1]     ; gerador:gen_cod|count_bit_tr[1]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.895      ;
+; 0.742 ; gerador:gen_cod|count_bit_tr[2]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.894      ;
+; 0.744 ; detector:det_dec|count_bit[3]    ; detector:det_dec|valid_out       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.896      ;
+; 0.746 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit_tr[0]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.900      ;
+; 0.750 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.900      ;
+; 0.750 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.900      ;
+; 0.751 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit_tr[3]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.905      ;
+; 0.752 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.902      ;
+; 0.752 ; gerador:gen_cod|count_bit[0]     ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.906      ;
+; 0.753 ; gerador:gen_cod|count_bit_tr[1]  ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.903      ;
+; 0.758 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_package[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.763 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_bit_tr[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.763 ; gerador:gen_cod|count_bit_tr[3]  ; gerador:gen_cod|count_package[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.766 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit[1]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.916      ;
+; 0.766 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit[2]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.916      ;
+; 0.768 ; detector:det_dec|count_bit[1]    ; detector:det_dec|valid_out       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.920      ;
+; 0.768 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit[0]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.918      ;
+; 0.769 ; gerador:gen_cod|count_bit_tr[0]  ; gerador:gen_cod|count_bit[3]     ; clk          ; clk         ; 0.000        ; -0.002     ; 0.919      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|count_bit[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|count_bit[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; detector:det_dec|seq_cod[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; detector:det_dec|seq_cod[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|seqdec[7]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|seqdec[7]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|valid_out       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|valid_out       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.A_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.A_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.B_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.B_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.B_1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.B_1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.C_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.C_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.C_1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.C_1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.D_2           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.D_2           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.E_2           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.E_2           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_0           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_1           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_1           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; detector:det_dec|y.F_2           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; detector:det_dec|y.F_2           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_bit_tr[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_package[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_package[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|count_package[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|count_package[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|header_in[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|header_in[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|header_in[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|header_in[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; gerador:gen_cod|seq              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; gerador:gen_cod|seq              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; resetn    ; clk        ; 0.123 ; 0.123 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; resetn    ; clk        ; 0.289 ; 0.289 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 3.902 ; 3.902 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 3.769 ; 3.769 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 3.747 ; 3.747 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 3.902 ; 3.902 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 3.769 ; 3.769 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 3.747 ; 3.747 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 3.902 ; 3.902 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.102  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -3.102  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -73.74  ; 0.0   ; 0.0      ; 0.0     ; -59.065             ;
+;  clk             ; -73.740 ; 0.000 ; N/A      ; N/A     ; -59.065             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; resetn    ; clk        ; 1.299 ; 1.299 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; resetn    ; clk        ; 0.289 ; 0.289 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 7.206 ; 7.206 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 6.901 ; 6.901 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 6.554 ; 6.554 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 6.896 ; 6.896 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 6.880 ; 6.880 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 6.895 ; 6.895 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 6.871 ; 6.871 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 6.884 ; 6.884 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 7.206 ; 7.206 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 6.909 ; 6.909 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; seqdec[*]  ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  seqdec[0] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  seqdec[1] ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  seqdec[2] ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  seqdec[3] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[4] ; clk        ; 3.769 ; 3.769 ; Rise       ; clk             ;
+;  seqdec[5] ; clk        ; 3.747 ; 3.747 ; Rise       ; clk             ;
+;  seqdec[6] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  seqdec[7] ; clk        ; 3.902 ; 3.902 ; Rise       ; clk             ;
+; valid_out  ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 292      ; 10       ; 168      ; 14       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 292      ; 10       ; 168      ; 14       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 40    ; 40   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Aug 20 18:26:04 2022
+Info: Command: quartus_sta data_package_transmission -c data_package_transmission
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 4 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'data_package_transmission.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.102
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.102       -73.740 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -59.065 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.749
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.749        -9.789 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -48.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4535 megabytes
+    Info: Processing ended: Sat Aug 20 18:26:05 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
